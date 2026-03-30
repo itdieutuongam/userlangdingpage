@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIỆU TƯỚNG AM</title>
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- STYLES -->
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+  /* Một số style bổ sung cho error */
+  .has-error { border-left: 3px solid #e05252 !important; }
+  .has-error input, .has-error select { border-color: #e05252; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     SECTION 1 – HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
+
+  <nav class="navbar">
+    <div class="logo-box">
+      <img src="image/LOGO.png" alt="DIỆU TƯỚNG AM"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="logo-fallback" style="display:none; width:75px; height:75px; border-radius:50%; border:2px solid var(--gold); background:rgba(61,36,9,0.8); color:var(--gold-light); align-items:center; justify-content:center; font-size:0.75rem; text-align:center; line-height:1.1;">
+        DIỆU<br>TƯỚNG<br>AM
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#process">Quy trình</a></li>
+      <li><a href="#order">Đặt tượng</a></li>
+      <li><a href="#portfolio">Tác phẩm</a></li>
+      <li><a href="#order" class="nav-cta">Báo giá ngay</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+  </nav>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 2 – QUY TRÌNH
+══════════════════════════════════════════ -->
+<section id="process">
+  <p class="section-label">QUY TRÌNH THỰC HIỆN</p>
+  <h2 class="section-title">Từ Tâm Nguyện Đến Tác Phẩm Hoàn Hảo</h2>
+
+  <div class="timeline-container">
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <div class="step-title">Thu thập tư liệu</div>
+          <div class="step-sub">Nghiên cứu ý nguyện, hình ảnh và yêu cầu chi tiết từ quý khách</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <div class="step-title">Phác thảo ý tưởng</div>
+          <div class="step-sub">Thiết kế 2D và mô hình 3D để khách hàng duyệt</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <div class="step-title">Tạo khuôn</div>
+          <div class="step-sub">Chế tác khuôn từ đất, sáp hoặc cát theo bản phác thảo</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+          <div class="step-title">Đúc tượng</div>
+          <div class="step-sub">Đổ vật liệu chính vào khuôn</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="step-badge">5</div>
+        <div class="step-content">
+          <div class="step-title">Hoàn thiện bề mặt</div>
+          <div class="step-sub">Sơn son thếp vàng, mạ vàng 24K, đánh bóng tinh xảo</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="step-badge">6</div>
+        <div class="step-content">
+          <div class="step-title">Duyệt mẫu & An vị</div>
+          <div class="step-sub">Kiểm tra cuối cùng, nghi thức an vị và bàn giao</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 3 – FORM ĐẶT TƯỢNG
+══════════════════════════════════════════ -->
+<!-- SECTION 3 – FORM -->
+<section id="order">
+  <p class="section-label">Đặt Tượng Theo Yêu Cầu</p>
+  <h2 class="section-title">ĐIỀN THÔNG TIN</h2>
+
+  <div class="form-outer">
+    <div class="form-top-bar">
+      <div>
+        <h2>Đặt Làm Tượng Theo Yêu Cầu</h2>
+        <p class="top-sub" id="step-counter">Bước 1 / 2 — Thông tin liên hệ</p>
+      </div>
+      <div style="text-align:right;">
+        <p class="top-phone">📞 0901 234 567</p>
+        <p class="top-call">Tư vấn miễn phí</p>
+      </div>
+    </div>
+
+    <div class="progress-row">
+      <div class="prog-seg on" id="ps1"></div>
+      <div class="prog-seg" id="ps2"></div>
+      <div class="prog-seg" id="ps3" style="display:none;"></div>
+    </div>
+
+    <div class="steps-nav">
+      <div class="step-tab active" id="tab1">1. Liên hệ</div>
+      <div class="step-tab" id="tab2">2. Nhu cầu</div>
+      <div class="step-tab" id="tab3" style="display:none;">3. Chọn tượng</div>
+    </div>
+
+    <div class="form-body">
+
+      <!-- ════════════════════════════
+           PANEL 1 – THÔNG TIN LIÊN HỆ
+      ════════════════════════════ -->
+      <div class="form-panel active" id="panel-1">
+        <p class="panel-title">👤 Thông tin liên hệ</p>
+
+        <!-- Chọn nhóm khách hàng -->
+        <div class="form-group" style="margin-bottom:1.8rem;">
+          <label style="font-size:0.8rem;font-weight:700;color:var(--brown);margin-bottom:0.6rem;display:block;">Loại khách hàng</label>
+          <div class="radio-group">
+            <label class="radio-item" style="font-weight:600;">
+              <input type="radio" name="customer-group" value="1" checked onchange="toggleCustomerGroup(this.value)">
+              <span>👥 Nhóm 1 – Khách hàng</span>
+            </label>
+            <label class="radio-item" style="font-weight:600;">
+              <input type="radio" name="customer-group" value="2" onchange="toggleCustomerGroup(this.value)">
+              <span>🧘 Nhóm 2 – Quý sư / Quý thầy</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ══ NHÓM 1: Khách hàng ══ -->
+        <div id="group-1-fields">
+          <div style="background:rgba(201,146,43,0.07);border-left:3px solid var(--gold);border-radius:4px;padding:0.6rem 1rem;margin-bottom:1.4rem;">
+            <span style="font-size:0.78rem;font-weight:700;color:var(--brown);">Nhóm 1: Khách hàng (Business / Doanh nghiệp / Người mua dịch vụ)</span>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.9rem;">1. Thông tin cơ bản</p>
+
+          <div class="form-row">
+            <div class="form-group" id="fg-name">
+              <label>Họ và tên <span style="color:#C9922B">*</span></label>
+              <input type="text" id="inp-name" placeholder="Nguyễn Văn A">
+              <span class="error-msg">Vui lòng nhập họ và tên</span>
+            </div>
+            <div class="form-group">
+              <label>Năm sinh</label>
+              <input type="text" placeholder="VD: 1980">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group" id="fg-phone">
+              <label>Số điện thoại <span style="color:#C9922B">*</span></label>
+              <input type="tel" id="inp-phone" placeholder="090xxxxxxx">
+              <span class="error-msg">Vui lòng nhập số điện thoại hợp lệ</span>
+            </div>
+            <div class="form-group" id="fg-city">
+              <label>Địa chỉ <span style="color:#C9922B">*</span></label>
+              <input type="text" id="inp-city" placeholder="Hà Nội, TP.HCM...">
+              <span class="error-msg">Vui lòng nhập địa chỉ</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nghề nghiệp / Lĩnh vực hoạt động</label>
+              <input type="text" placeholder="VD: Kinh doanh, Y tế, Giáo dục...">
+            </div>
+            <div class="form-group">
+              <label>Tính cách</label>
+              <input type="text" placeholder="VD: Hướng ngoại, cẩn thận...">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Sở thích</label>
+              <input type="text" placeholder="VD: Du lịch, thiền định...">
+            </div>
+            <div class="form-group">
+              <label>Ngân sách</label>
+              <input type="text" placeholder="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Các mối quan hệ với khách hàng DTA cần lưu ý</label>
+            <textarea placeholder="Ghi rõ các mối quan hệ đặc biệt cần chú ý..." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Các mối quan hệ của kinh doanh khai thác được</label>
+            <textarea placeholder="Ghi rõ các mối quan hệ đã khai thác..." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Điều gì khiến quý sư / quý thầy quyết định làm thời điểm này?</label>
+            <textarea placeholder="Ghi rõ lý do / động lực..." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Biết DTA qua</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="source-g1" value="nguoi-quen"> <span>Người quen giới thiệu</span></label>
+              <label class="radio-item"><input type="radio" name="source-g1" value="facebook"> <span>Facebook</span></label>
+              <label class="radio-item"><input type="radio" name="source-g1" value="zalo"> <span>Zalo</span></label>
+              <label class="radio-item"><input type="radio" name="source-g1" value="khac"> <span>Khác</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ NHÓM 2: Quý sư / Quý thầy ══ -->
+        <div id="group-2-fields" style="display:none;">
+          <div style="background:rgba(201,146,43,0.07);border-left:3px solid var(--gold);border-radius:4px;padding:0.6rem 1rem;margin-bottom:1.4rem;">
+            <span style="font-size:0.78rem;font-weight:700;color:var(--brown);">Nhóm 2: Quý sư / Quý thầy (Expert / Influencer / Người có uy tín)</span><br>
+            <span style="font-size:0.7rem;color:var(--text-light);">Có thể là: giảng viên, chuyên gia, người nổi tiếng, leader cộng đồng, người có ảnh hưởng</span>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.9rem;">Thông tin cơ bản</p>
+
+          <div class="form-row">
+            <div class="form-group" id="fg-name-2">
+              <label>Họ và tên <span style="color:#C9922B">*</span></label>
+              <input type="text" id="inp-name-2" placeholder="Nguyễn Văn A">
+              <span class="error-msg">Vui lòng nhập họ và tên</span>
+            </div>
+            <div class="form-group">
+              <label>Năm sinh</label>
+              <input type="text" placeholder="VD: 1970">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group" id="fg-phone-2">
+              <label>Số điện thoại <span style="color:#C9922B">*</span></label>
+              <input type="tel" id="inp-phone-2" placeholder="090xxxxxxx">
+              <span class="error-msg">Vui lòng nhập số điện thoại hợp lệ</span>
+            </div>
+            <div class="form-group" id="fg-city-2">
+              <label>Địa chỉ <span style="color:#C9922B">*</span></label>
+              <input type="text" id="inp-city-2" placeholder="Hà Nội, TP.HCM...">
+              <span class="error-msg">Vui lòng nhập địa chỉ</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nghề nghiệp / Lĩnh vực hoạt động</label>
+              <input type="text" placeholder="VD: Giảng viên, chuyên gia tâm linh...">
+            </div>
+            <div class="form-group">
+              <label>Tính cách</label>
+              <input type="text" placeholder="VD: Điềm tĩnh, uy nghiêm...">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Sở thích</label>
+              <input type="text" placeholder="VD: Thiền định, thư pháp...">
+            </div>
+            <div class="form-group">
+              <label>Giá trị cá nhân</label>
+              <input type="text" placeholder="VD: Truyền bá Phật pháp, giáo dục...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Các mối quan hệ với khách hàng DTA cần lưu ý</label>
+            <textarea placeholder="Ghi rõ các mối quan hệ đặc biệt cần chú ý..." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Các mối quan hệ của kinh doanh khai thác được</label>
+            <textarea placeholder="Ghi rõ các mối quan hệ đã khai thác..." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Điều gì khiến quý sư / quý thầy quyết định làm thời điểm này?</label>
+            <textarea placeholder="Ghi rõ lý do / động lực..." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Biết DTA qua</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="source-g2" value="nguoi-quen"> <span>Người quen giới thiệu</span></label>
+              <label class="radio-item"><input type="radio" name="source-g2" value="facebook"> <span>Facebook</span></label>
+              <label class="radio-item"><input type="radio" name="source-g2" value="zalo"> <span>Zalo</span></label>
+              <label class="radio-item"><input type="radio" name="source-g2" value="khac"> <span>Khác</span></label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Ngân sách</label>
+              <input type="text" placeholder="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nhóm phật tử thuộc nhóm nào, đặc điểm</label>
+            <textarea placeholder="Ghi rõ nhóm phật tử và đặc điểm nổi bật..." style="min-height:70px;"></textarea>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <span></span>
+          <button class="btn-next" onclick="nextStep(1)">Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════
+           PANEL 2 – NHU CẦU TƯ VẤN
+      ════════════════════════════ -->
+      <div class="form-panel" id="panel-2">
+        <p class="panel-title">🙏 Nhu cầu của Quý khách</p>
+
+        <!-- Chọn nhu cầu -->
+        <div class="form-group" style="margin-bottom:1.8rem;">
+          <label style="font-size:0.8rem;font-weight:700;color:var(--brown);margin-bottom:0.6rem;display:block;">Quý khách quan tâm đến dịch vụ nào?</label>
+          <div class="radio-group">
+            <label class="radio-item" style="font-weight:600;">
+              <input type="radio" name="need-type" value="1" checked onchange="toggleNeedType(this.value)">
+              <span>🏯 Nhu cầu 1 – Giải pháp tổng thể kiến tạo không gian phòng thờ</span>
+            </label>
+            <label class="radio-item" style="font-weight:600;">
+              <input type="radio" name="need-type" value="2" onchange="toggleNeedType(this.value)">
+              <span>🕉️ Nhu cầu 2 – Nghệ thuật tạo tượng Diệu Tướng Am</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ══ NHU CẦU 1: Phòng thờ ══ -->
+        <div id="need-1-fields">
+          <div style="background:rgba(201,146,43,0.07);border-left:3px solid var(--gold);border-radius:4px;padding:0.6rem 1rem;margin-bottom:1.4rem;">
+            <span style="font-size:0.78rem;font-weight:700;color:var(--brown);">Giải pháp tổng thể kiến tạo không gian phòng thờ</span>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.9rem;">Phần 1: Mở câu chuyện</p>
+
+          <div class="form-group">
+            <label>Anh/chị đang dự định làm mới hay cải tạo lại phòng thờ?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n1-neworreno"> <span>Làm mới hoàn toàn</span></label>
+              <label class="radio-item"><input type="radio" name="n1-neworreno"> <span>Cải tạo lại</span></label>
+              <label class="radio-item"><input type="radio" name="n1-neworreno"> <span>Chưa xác định</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Không gian thờ hiện tại của gia đình như thế nào?</label>
+            <textarea placeholder="Anh/chị chia sẻ một chút về không gian thờ hiện tại..." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Cơ duyên nào khiến anh/chị quyết định làm phòng thờ vào thời điểm này?</label>
+            <textarea placeholder="Ghi rõ lý do / thời điểm..." style="min-height:60px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Điều anh/chị hài lòng nhất với không gian thờ hiện tại là gì?</label>
+            <input type="text" placeholder="VD: Vị trí tốt, không gian rộng...">
+          </div>
+          <div class="form-group">
+            <label>Điều chưa hài lòng / muốn thay đổi?</label>
+            <input type="text" placeholder="VD: Chưa trang nghiêm, thiếu ánh sáng...">
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 2: Khai thác hiện trạng</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Không gian thờ đặt ở đâu trong nhà?</label>
+              <input type="text" placeholder="VD: Phòng riêng, tầng 2, phòng khách...">
+            </div>
+            <div class="form-group">
+              <label>Diện tích khu vực (m²)</label>
+              <input type="text" placeholder="VD: 8m², 12m²...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Hiện tại đã có bàn thờ / tủ thờ / tượng chưa?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n1-existing"> <span>Chưa có gì</span></label>
+              <label class="radio-item"><input type="radio" name="n1-existing"> <span>Đã có một phần</span></label>
+              <label class="radio-item"><input type="radio" name="n1-existing"> <span>Đã có đầy đủ nhưng muốn thay mới</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Điểm chưa hài lòng nhất hiện tại?</label>
+            <input type="text" placeholder="VD: Bố cục lộn xộn, thiếu điểm nhấn...">
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 3: Khám phá mong muốn</p>
+
+          <div class="form-group">
+            <label>Anh/chị mong muốn không gian phòng thờ mang lại cảm giác như thế nào?</label>
+            <div class="checkbox-grid">
+              <label class="check-item"><input type="checkbox" name="n1-feel"> <span>Trang nghiêm</span></label>
+              <label class="check-item"><input type="checkbox" name="n1-feel"> <span>Ấm cúng</span></label>
+              <label class="check-item"><input type="checkbox" name="n1-feel"> <span>Thanh tịnh</span></label>
+              <label class="check-item"><input type="checkbox" name="n1-feel"> <span>Sang trọng</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Anh/chị đã có hình mẫu hay mẫu nào thích chưa?</label>
+            <textarea placeholder="Mô tả hoặc chia sẻ link hình ảnh tham khảo..." style="min-height:60px;"></textarea>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 4: Yếu tố tâm linh & phong thủy</p>
+
+          <div class="form-group">
+            <label>Gia đình đang thờ những ai?</label>
+            <input type="text" placeholder="VD: Phật, ông bà tổ tiên, thần tài...">
+          </div>
+          <div class="form-group">
+            <label>Tôn giáo / tín ngưỡng</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n1-religion"> <span>Phật giáo</span></label>
+              <label class="radio-item"><input type="radio" name="n1-religion"> <span>Thờ ông bà / tổ tiên</span></label>
+              <label class="radio-item"><input type="radio" name="n1-religion"> <span>Khác</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Anh/chị có làm theo thầy phong thủy riêng hay cần DTA tư vấn?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n1-fengshui"> <span>Có thầy riêng</span></label>
+              <label class="radio-item"><input type="radio" name="n1-fengshui"> <span>Cần DTA tư vấn</span></label>
+              <label class="radio-item"><input type="radio" name="n1-fengshui"> <span>Chưa cần thiết</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Điều kiêng kỵ đặc biệt cần lưu ý (nếu có)</label>
+            <input type="text" placeholder="VD: Không đặt gương đối diện, hướng thờ...">
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 5: Phong cách thiết kế</p>
+
+          <div class="form-group">
+            <label>Phong cách thiên về</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n1-style"> <span>Truyền thống / Cổ điển</span></label>
+              <label class="radio-item"><input type="radio" name="n1-style"> <span>Tân cổ điển</span></label>
+              <label class="radio-item"><input type="radio" name="n1-style"> <span>Indochine</span></label>
+              <label class="radio-item"><input type="radio" name="n1-style"> <span>Hiện đại</span></label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Tông màu yêu thích</label>
+              <div class="radio-group">
+                <label class="radio-item"><input type="radio" name="n1-color"> <span>Trầm ấm</span></label>
+                <label class="radio-item"><input type="radio" name="n1-color"> <span>Sáng nhẹ nhàng</span></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Chất liệu yêu thích</label>
+              <div class="radio-group">
+                <label class="radio-item"><input type="radio" name="n1-material"> <span>Gỗ tự nhiên</span></label>
+                <label class="radio-item"><input type="radio" name="n1-material"> <span>Sơn son thếp vàng</span></label>
+                <label class="radio-item"><input type="radio" name="n1-material"> <span>Đơn giản, tinh tế</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Anh/chị muốn không gian thờ nổi bật hay hài hòa với tổng thể nhà?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n1-highlight"> <span>Điểm nhấn nổi bật</span></label>
+              <label class="radio-item"><input type="radio" name="n1-highlight"> <span>Hài hòa tổng thể</span></label>
+            </div>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 6: Chi tiết thiết kế</p>
+
+          <div class="form-group">
+            <label>Phạm vi thiết kế</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n1-scope"> <span>Toàn bộ không gian phòng thờ</span></label>
+              <label class="radio-item"><input type="radio" name="n1-scope"> <span>Chỉ tập trung vào bàn thờ</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Hạng mục cần kết hợp thêm (có thể chọn nhiều)</label>
+            <div class="checkbox-grid">
+              <label class="check-item"><input type="checkbox" name="n1-items"> <span>Vách ngăn</span></label>
+              <label class="check-item"><input type="checkbox" name="n1-items"> <span>Tủ trang trí</span></label>
+              <label class="check-item"><input type="checkbox" name="n1-items"> <span>Hệ đèn</span></label>
+              <label class="check-item"><input type="checkbox" name="n1-items"> <span>Không gian tụng kinh / thiền</span></label>
+            </div>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 7: Thời gian & ưu tiên</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Dự kiến bắt đầu làm</label>
+              <select>
+                <option value="">-- Chọn thời gian --</option>
+                <option>Trong 1 tháng tới</option>
+                <option>1 – 3 tháng tới</option>
+                <option>Chưa xác định</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Cần hoàn thành trước ngày đặc biệt nào không?</label>
+              <input type="text" placeholder="VD: Trước Tết, giỗ ngày...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Ghi chú / yêu cầu thêm</label>
+            <textarea placeholder="Bất kỳ điều gì anh/chị muốn chia sẻ thêm..." style="min-height:70px;"></textarea>
+          </div>
+        </div>
+
+        <!-- ══ NHU CẦU 2: Tạo tượng ══ -->
+        <div id="need-2-fields" style="display:none;">
+          <div style="background:rgba(201,146,43,0.07);border-left:3px solid var(--gold);border-radius:4px;padding:0.6rem 1rem;margin-bottom:1.4rem;">
+            <span style="font-size:0.78rem;font-weight:700;color:var(--brown);">Nghệ thuật tạo tượng Diệu Tướng Am</span>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.9rem;">Phần 1: Mở câu chuyện</p>
+
+          <div class="form-group">
+            <label>Điều gì khiến anh/chị muốn tạo tượng vào thời điểm này?</label>
+            <textarea placeholder="Chia sẻ lý do / cơ duyên..." style="min-height:70px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Anh/chị đã nghĩ đến việc này lâu chưa?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n2-howlong"> <span>Mới nghĩ gần đây</span></label>
+              <label class="radio-item"><input type="radio" name="n2-howlong"> <span>Đã nghĩ từ lâu</span></label>
+              <label class="radio-item"><input type="radio" name="n2-howlong"> <span>Từng tìm hiểu nhưng chưa thực hiện</span></label>
+            </div>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 2: Hình dung sản phẩm</p>
+
+          <div class="form-group">
+            <label>Anh/chị hình dung tượng khi hoàn thiện sẽ như thế nào?</label>
+            <textarea placeholder="Mô tả hình dung của anh/chị..." style="min-height:60px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Anh/chị thích cảm giác tượng mang lại</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n2-feeling"> <span>Trang nghiêm</span></label>
+              <label class="radio-item"><input type="radio" name="n2-feeling"> <span>Hiền từ</span></label>
+              <label class="radio-item"><input type="radio" name="n2-feeling"> <span>Uy nghiêm</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Khi nhìn vào tượng, anh/chị muốn cảm nhận điều gì đầu tiên?</label>
+            <input type="text" placeholder="VD: Bình an, được che chở, kính ngưỡng...">
+          </div>
+          <div class="form-group">
+            <label>Có mẫu tượng nào anh/chị từng thấy và thích không?</label>
+            <textarea placeholder="Mô tả hoặc chia sẻ link hình ảnh tham khảo..." style="min-height:60px;"></textarea>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 3: Ngữ cảnh sử dụng</p>
+
+          <div class="form-group">
+            <label>Không gian đặt tượng hiện tại như thế nào?</label>
+            <textarea placeholder="Mô tả vị trí, kích thước, ánh sáng..." style="min-height:60px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Anh/chị thường đứng ở vị trí nào khi nhìn tượng?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n2-viewpos"> <span>Nhìn ngang tầm mắt</span></label>
+              <label class="radio-item"><input type="radio" name="n2-viewpos"> <span>Nhìn từ dưới lên</span></label>
+              <label class="radio-item"><input type="radio" name="n2-viewpos"> <span>Nhìn từ xa</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Không gian đó mang cảm giác</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n2-space"> <span>Ấm cúng</span></label>
+              <label class="radio-item"><input type="radio" name="n2-space"> <span>Trang nghiêm</span></label>
+              <label class="radio-item"><input type="radio" name="n2-space"> <span>Trung tính</span></label>
+            </div>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 4: Ngân sách</p>
+
+          <div class="form-group">
+            <label>Anh/chị ưu tiên điều gì?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n2-priority"> <span>Chất lượng & độ tinh xảo</span></label>
+              <label class="radio-item"><input type="radio" name="n2-priority"> <span>Tối ưu chi phí</span></label>
+              <label class="radio-item"><input type="radio" name="n2-priority"> <span>Cân bằng cả hai</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nếu có phương án đẹp hơn nhưng cao hơn một chút, anh/chị có cân nhắc không?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n2-upgrade"> <span>Có, sẵn sàng cân nhắc</span></label>
+              <label class="radio-item"><input type="radio" name="n2-upgrade"> <span>Cần nghe thêm</span></label>
+              <label class="radio-item"><input type="radio" name="n2-upgrade"> <span>Giữ ngân sách cố định</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mức giá đã tham khảo trước đây (nếu có)</label>
+            <input type="text" placeholder="VD: Khoảng 20 – 50 triệu...">
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 5: Thời điểm</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Dự kiến khi nào cần hoàn thiện?</label>
+              <select>
+                <option value="">-- Chọn thời gian --</option>
+                <option>Trong 1 tháng</option>
+                <option>1 – 3 tháng</option>
+                <option>3 – 6 tháng</option>
+                <option>Chưa xác định</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Mốc thời gian có liên quan đến dịp đặc biệt không?</label>
+              <input type="text" placeholder="VD: Lễ Phật Đản, giỗ, khai trương...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nếu hoàn thành sớm hơn, điều đó có ý nghĩa gì với anh/chị?</label>
+            <input type="text" placeholder="Chia sẻ suy nghĩ của anh/chị...">
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 6: Tâm linh</p>
+
+          <div class="form-group">
+            <label>Anh/chị có theo thầy hoặc chùa nào không?</label>
+            <input type="text" placeholder="VD: Chùa XYZ, thầy ABC...">
+          </div>
+          <div class="form-group">
+            <label>Anh/chị có yêu cầu gì về nghi thức không?</label>
+            <textarea placeholder="VD: Khai quang điểm nhãn, nhập tự, cúng an vị..." style="min-height:60px;"></textarea>
+          </div>
+
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.9rem;">Phần 7: Người quyết định</p>
+
+          <div class="form-group">
+            <label>Ngoài anh/chị, còn ai cùng tham gia quyết định không?</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="n2-decision"> <span>Tôi tự quyết định</span></label>
+              <label class="radio-item"><input type="radio" name="n2-decision"> <span>Cùng vợ/chồng</span></label>
+              <label class="radio-item"><input type="radio" name="n2-decision"> <span>Cùng gia đình / ban quản trị chùa</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Ghi chú / yêu cầu thêm</label>
+            <textarea placeholder="Bất kỳ điều gì anh/chị muốn chia sẻ thêm..." style="min-height:70px;"></textarea>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn-back" onclick="prevStep(2)">← Quay lại</button>
+          <button class="btn-next" id="btn-panel2-next" onclick="nextFromPanel2()">Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════
+           PANEL 2B – CHỌN LOẠI TƯỢNG
+      ════════════════════════════ -->
+      <div class="form-panel" id="panel-2b">
+        <p class="panel-title">Chọn loại tượng</p>
+
+        <div class="form-group" style="margin-bottom:2rem;">
+          <label style="font-size:0.8rem;font-weight:700;color:var(--brown);margin-bottom:0.6rem;display:block;">Quý khách muốn thỉnh loại tượng nào?</label>
+
+          <!-- Nhóm I -->
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.2rem 0 0.6rem;">I. Các bộ tượng Phật chuẩn</p>
+          <div class="radio-group" id="statue-group-1">
+            <label class="radio-item"><input type="radio" name="statue-type" value="Bộ Tam Thế Phật"> <span>Bộ Tam Thế Phật</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Bộ Hoa Nghiêm Tam Thánh"> <span>Bộ Hoa Nghiêm Tam Thánh</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Bộ Tây Phương Tam Thánh"> <span>Bộ Tây Phương Tam Thánh</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Bộ Tam Thánh Ta Bà"> <span>Bộ Tam Thánh Ta Bà</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Bộ Tượng Thích Ca Tam Tôn"> <span>Bộ Tượng Thích Ca Tam Tôn</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Bộ Ngũ Phương Phật (Ngũ Trí Như Lai – Mật tông)"> <span>Bộ Ngũ Phương Phật <em style="font-size:0.78rem;color:var(--text-light);">(Ngũ Trí Như Lai – Mật tông)</em></span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Bộ Thất Phật Dược Sư"> <span>Bộ Thất Phật Dược Sư</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Ngũ Đại Minh Vương"> <span>Ngũ Đại Minh Vương</span></label>
+          </div>
+
+          <!-- Nhóm II -->
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.6rem;">II. Chư Phật</p>
+          <div class="radio-group" id="statue-group-2">
+            <label class="radio-item"><input type="radio" name="statue-type" value="Thích Ca Mâu Ni"> <span>Thích Ca Mâu Ni</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Phật A Di Đà"> <span>Phật A Di Đà</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Phật Dược Sư"> <span>Phật Dược Sư</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Phật Tỳ Lô Giá Na"> <span>Phật Tỳ Lô Giá Na</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Phật Di Lạc"> <span>Phật Di Lạc</span></label>
+          </div>
+
+          <!-- Nhóm III -->
+          <p style="font-size:0.72rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin:1.4rem 0 0.6rem;">III. Chư vị Bồ Tát</p>
+          <div class="radio-group" id="statue-group-3">
+            <label class="radio-item"><input type="radio" name="statue-type" value="Quán Thế Âm Bồ Tát"> <span>Quán Thế Âm Bồ Tát</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Địa Tạng Vương Bồ Tát"> <span>Địa Tạng Vương Bồ Tát</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Văn Thù Sư Lợi Bồ Tát"> <span>Văn Thù Sư Lợi Bồ Tát</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Phổ Hiền Bồ Tát"> <span>Phổ Hiền Bồ Tát</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Đại Thế Chí Bồ Tát"> <span>Đại Thế Chí Bồ Tát</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Kim Cang Thủ Bồ Tát"> <span>Kim Cang Thủ Bồ Tát</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Hư Không Tạng Bồ Tát"> <span>Hư Không Tạng Bồ Tát</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Bạch Độ Mẫu"> <span>Bạch Độ Mẫu</span></label>
+            <label class="radio-item"><input type="radio" name="statue-type" value="Lục Độ Mẫu"> <span>Lục Độ Mẫu</span></label>
+          </div>
+
+          <div id="fg-statue-error" style="display:none;margin-top:0.8rem;">
+            <span style="font-size:0.75rem;color:#e05252;font-weight:600;">⚠ Vui lòng chọn loại tượng để tiếp tục</span>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button class="btn-back" onclick="prevFrom2b()">← Quay lại</button>
+          <button class="btn-submit" onclick="submitFrom2b()">✓ Gửi yêu cầu tư vấn</button>
+        </div>
+      </div>
+
+    </div><!-- /.form-body -->
+  </div><!-- /.form-outer -->
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 4 – PORTFOLIO + FOOTER
+══════════════════════════════════════════ -->
+<section id="portfolio">
+  <p class="section-label">Tác phẩm & Dự án tiêu biểu</p>
+  <h2 class="section-title">Những Tượng Đã Được Tạo Tác</h2>
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="image/1.jpg" alt="Tác phẩm 1" loading="lazy">
+      <div class="gallery-overlay"><div><h4>Phật Di Lặc Đại Bi</h4><p>Gỗ Mun – Mạ vàng 24K</p></div></div>
+    </div>
+    <div class="gallery-item">
+      <img src="image/2.jpg" alt="Tác phẩm 2" loading="lazy">
+      <div class="gallery-overlay"><div><h4>Quan Thế Âm Bồ Tát</h4><p>Đá cẩm thạch – H.80cm</p></div></div>
+    </div>
+    <div class="gallery-item">
+      <img src="image/3.jpg" alt="Tác phẩm 3" loading="lazy">
+      <div class="gallery-overlay"><div><h4>Phật Thích Ca Nhập Định</h4><p>Gỗ Trắc – Sơn son thếp vàng</p></div></div>
+    </div>
+    <div class="gallery-item">
+      <img src="image/4.jpg" alt="Tác phẩm 4" loading="lazy">
+      <div class="gallery-overlay"><div><h4>Địa Tạng Vương Bồ Tát</h4><p>Đồng nguyên chất – Mạ vàng</p></div></div>
+    </div>
+    <div class="gallery-item">
+      <img src="image/5.jpg" alt="Tác phẩm 5" loading="lazy">
+      <div class="gallery-overlay"><div><h4>Phật A Di Đà Tiếp Dẫn</h4><p>Gỗ Lim – Màu tự nhiên</p></div></div>
+    </div>
+    <div class="gallery-item" style="background:linear-gradient(135deg,#2A1506,#5C3015);">
+      <img src="image/6.jpg" alt="Tác phẩm 6" loading="lazy">
+      <div class="gallery-overlay"><div><h4>Phật Dược Sư Lưu Ly</h4><p>Gỗ Gụ – Mạ vàng 24K</p></div></div>
+    </div>
+  </div>
+
+  <div class="footer-strip">
+    <div class="company-brand">
+      <h3>DIỆU TƯỚNG AM</h3>
+      <p>Chuyên tạc tượng Phật thủ công theo yêu cầu. Kết hợp nghệ thuật điêu khắc truyền thống với tiêu chuẩn chất lượng hiện đại. Hơn 20 năm kinh nghiệm phục vụ hàng trăm ngôi chùa, gia đình và doanh nghiệp trên khắp cả nước.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/dieutuongam.nghethuatphatgiao" class="social-btn" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Facebook
+        </a>
+        <a href="http://www.youtube.com/@dieutuongamnghethuatphatgiao?sub_confirmation=1" class="social-btn" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          YouTube
+        </a>
+        <a href="#" class="social-btn" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.53V6.75a4.85 4.85 0 01-1.02-.06z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+
+    <div class="info-col">
+      <h4>Liên hệ</h4>
+      <ul>
+        <li>0901 234 567</li>
+        <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3b52555d547b5f525e4e4f4e54555c5a5615585456">[email&#160;protected]</a></li>
+        <li>Showroom Hồ Chí Minh: 382 Nam Kỳ Khởi Nghĩa, P. Xuân Hòa, Hồ Chí Minh</li>
+        <li>Showroom Hà Nội: 252 Bà Triệu, P. Hai Bà Trưng, Hà Nội</li>
+        <li>T2 – CN: 8:30 – 20:00</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>© 2026 Diệu Tướng Am. Tất cả quyền được bảo lưu.</p>
+    <p>dieutuongam.com</p>
+  </div>
+</section>
+
+<!-- TOAST -->
+<div class="toast" id="toast">Chúng tôi sẽ liên hệ trong vòng 24 giờ.</div>
+
+<!-- ── SCRIPTS ── -->
+<script>
+// ====================== TRẠNG THÁI ======================
+// Luồng:
+//   Nhu cầu 1 (phòng thờ): panel-1 → panel-2 → submitForm()
+//   Nhu cầu 2 (tạo tượng): panel-1 → panel-2 → panel-2b → submitForm()
+
+// ====================== HIỂN THỊ PANEL ======================
+function showPanelById(id) {
+  document.querySelectorAll('.form-panel').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('panel-' + id);
+  if (el) el.classList.add('active');
+  document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Cập nhật thanh progress + tab + counter
+function setProgressUI(currentStep, totalSteps, label) {
+  // Tabs
+  document.querySelectorAll('.step-tab').forEach((t, i) => {
+    t.classList.remove('active', 'done');
+    const s = i + 1;
+    if (s === currentStep) t.classList.add('active');
+    else if (s < currentStep) t.classList.add('done');
+  });
+
+  // Hiện/ẩn tab3 + ps3
+  const tab3 = document.getElementById('tab3');
+  const ps3  = document.getElementById('ps3');
+  if (tab3) tab3.style.display = totalSteps >= 3 ? '' : 'none';
+  if (ps3)  ps3.style.display  = totalSteps >= 3 ? '' : 'none';
+
+  // Progress segments
+  for (let i = 1; i <= totalSteps; i++) {
+    const seg = document.getElementById('ps' + i);
+    if (seg) seg.classList.toggle('on', i <= currentStep);
+  }
+
+  document.getElementById('step-counter').textContent =
+    `Bước ${currentStep} / ${totalSteps} — ${label}`;
+}
+
+// ====================== VALIDATION ======================
+function setError(groupId, hasError) {
+  const el = document.getElementById(groupId);
+  if (el) el.classList.toggle('has-error', hasError);
+}
+
+function validateStep1() {
+  const group = document.querySelector('input[name="customer-group"]:checked').value;
+  let ok = true;
+  if (group === '1') {
+    if (!document.getElementById('inp-name').value.trim())  { setError('fg-name',  true); ok = false; }
+    const ph = document.getElementById('inp-phone').value.replace(/\s/g,'');
+    if (!ph || !/^[0-9]{9,11}$/.test(ph))                  { setError('fg-phone', true); ok = false; }
+    if (!document.getElementById('inp-city').value.trim())  { setError('fg-city',  true); ok = false; }
+  } else {
+    if (!document.getElementById('inp-name-2').value.trim()) { setError('fg-name-2',  true); ok = false; }
+    const ph2 = document.getElementById('inp-phone-2').value.replace(/\s/g,'');
+    if (!ph2 || !/^[0-9]{9,11}$/.test(ph2))                 { setError('fg-phone-2', true); ok = false; }
+    if (!document.getElementById('inp-city-2').value.trim()) { setError('fg-city-2',  true); ok = false; }
+  }
+  if (!ok) {
+    const first = document.querySelector('#panel-1 .form-group.has-error');
+    if (first) first.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+  return ok;
+}
+
+// ====================== ĐIỀU HƯỚNG ======================
+
+// Bước 1 → Bước 2
+function nextStep(from) {
+  if (from === 1) {
+    if (!validateStep1()) return;
+    showPanelById(2);
+    setProgressUI(2, 2, 'Nhu cầu tư vấn');
+    return;
+  }
+}
+
+function prevStep(from) {
+  if (from === 2) {
+    showPanelById(1);
+    setProgressUI(1, 2, 'Thông tin liên hệ');
+  }
+}
+
+// Bước 2: nhấn Tiếp theo
+//   - Nhu cầu 1 → gửi luôn
+//   - Nhu cầu 2 → sang panel-2b (chọn tượng)
+function nextFromPanel2() {
+  const needType = document.querySelector('input[name="need-type"]:checked').value;
+  if (needType === '1') {
+    // Gửi form phòng thờ luôn
+    submitForm();
+  } else {
+    // Sang bước chọn tượng
+    showPanelById('2b');
+    setProgressUI(3, 3, 'Chọn loại tượng');
+  }
+}
+
+// Quay lại từ panel-2b → panel-2
+function prevFrom2b() {
+  showPanelById(2);
+  setProgressUI(2, 2, 'Nhu cầu tư vấn');
+}
+
+// Bước 2b: nhấn Gửi (sau khi chọn tượng)
+function submitFrom2b() {
+  const chosen = document.querySelector('input[name="statue-type"]:checked');
+  const errEl  = document.getElementById('fg-statue-error');
+  if (!chosen) { errEl.style.display = 'block'; return; }
+  errEl.style.display = 'none';
+  submitForm();
+}
+
+// ====================== TOGGLE FUNCTIONS ======================
+function toggleOther(cb, id) {
+  document.getElementById(id).style.display = cb.checked ? 'block' : 'none';
+}
+function toggleEngrave(cb) {
+  document.getElementById('engrave-text').style.display = cb.checked ? 'block' : 'none';
+}
+function toggleCustomerGroup(val) {
+  document.getElementById('group-1-fields').style.display = val === '1' ? 'block' : 'none';
+  document.getElementById('group-2-fields').style.display = val === '2' ? 'block' : 'none';
+}
+function toggleNeedType(val) {
+  document.getElementById('need-1-fields').style.display = val === '1' ? 'block' : 'none';
+  document.getElementById('need-2-fields').style.display = val === '2' ? 'block' : 'none';
+  const btn = document.getElementById('btn-panel2-next');
+  if (btn) {
+    btn.textContent = val === '1' ? '✓ Gửi yêu cầu tư vấn' : 'Tiếp theo →';
+    btn.className   = val === '1' ? 'btn-submit' : 'btn-next';
+  }
+}
+
+// ====================== COLLECT & SUBMIT ======================
+function collectFormData() {
+  const group    = document.querySelector('input[name="customer-group"]:checked').value;
+  const needType = document.querySelector('input[name="need-type"]:checked').value;
+  const statueEl = document.querySelector('input[name="statue-type"]:checked');
+
+  let data = {
+    nhomKhachHang : group === '1' ? 'Khách hàng' : 'Quý sư / Quý thầy',
+    nhuCau        : needType === '1' ? 'Giải pháp phòng thờ' : 'Tạo tượng Diệu Tướng Am',
+    loaiTuong     : statueEl ? statueEl.value : '',
+    timestamp     : new Date().toLocaleString('vi-VN'),
+    hoTen: '', soDienThoai: '', diaChi: ''
+  };
+
+  if (group === '1') {
+    data.hoTen       = document.getElementById('inp-name').value.trim();
+    data.soDienThoai = document.getElementById('inp-phone').value.trim();
+    data.diaChi      = document.getElementById('inp-city').value.trim();
+  } else {
+    data.hoTen       = document.getElementById('inp-name-2').value.trim();
+    data.soDienThoai = document.getElementById('inp-phone-2').value.trim();
+    data.diaChi      = document.getElementById('inp-city-2').value.trim();
+  }
+  return data;
+}
+
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwR5Bv8SOL57r_DYg9S18d2UOrvbm5Gqj_ySvddlwtAfq-MXxCObNstYAp2raiX_6Ei/exec';
+
+async function sendToGoogleSheets(data) {
+  try {
+    const formData = new FormData();
+    Object.keys(data).forEach(k => formData.append(k, data[k] || ''));
+    const res  = await fetch(GOOGLE_SHEET_URL, { method:'POST', body: formData });
+    const text = await res.text();
+    let result;
+    try { result = JSON.parse(text); } catch { result = { success: res.ok }; }
+    return result.success === true;
+  } catch (err) {
+    console.error('❌ Lỗi gửi dữ liệu:', err);
+    return false;
+  }
+}
+
+async function submitForm() {
+  const btns = document.querySelectorAll('.btn-submit');
+  btns.forEach(b => { b.textContent = '⏳ Đang gửi...'; b.disabled = true; });
+
+  const data    = collectFormData();
+  const success = await sendToGoogleSheets(data);
+
+  btns.forEach(b => { b.textContent = '✓ Gửi yêu cầu tư vấn'; b.disabled = false; });
+
+  if (success) {
+    document.getElementById('toast').classList.add('show');
+    setTimeout(() => document.getElementById('toast').classList.remove('show'), 5000);
+  } else {
+    alert('❌ Có lỗi khi gửi dữ liệu. Vui lòng thử lại hoặc gọi: 0901 234 567');
+  }
+}
+
+// ====================== MOBILE MENU ======================
+function toggleMobileMenu() {
+  document.querySelector('.nav-links').classList.toggle('active');
+}
+
+// ====================== INIT ======================
+document.addEventListener('DOMContentLoaded', function () {
+  // Clear error on input
+  document.querySelectorAll('#panel-1 input').forEach(el => {
+    el.addEventListener('input', function () {
+      const fg = this.closest('.form-group');
+      if (fg && fg.classList.contains('has-error') && this.value.trim())
+        fg.classList.remove('has-error');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
