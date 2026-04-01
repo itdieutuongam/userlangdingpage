@@ -1438,7 +1438,7 @@ let pinBuffer = '';
 
 function initPin() {
   // Nếu thiết bị này đã xác thực PIN trước đó → bỏ qua
-  if (sessionStorage.getItem(PIN_STORAGE) === 'yes') {
+  if (localStorage.getItem(PIN_STORAGE) === 'yes') {
     document.getElementById('pin-overlay').classList.add('hidden');
   }
 }
@@ -1466,7 +1466,7 @@ function updatePinDots() {
 
 function checkPin() {
   if (pinBuffer === PIN_CORRECT) {
-    sessionStorage.setItem(PIN_STORAGE, 'yes');
+    localStorage.setItem(PIN_STORAGE, 'yes');
     const overlay = document.getElementById('pin-overlay');
     overlay.style.opacity = '0';
     overlay.style.transition = 'opacity 0.4s';
