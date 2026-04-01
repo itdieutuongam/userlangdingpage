@@ -12,12 +12,71 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-  /* Một số style bổ sung cho error */
+  /* Error */
   .has-error { border-left: 3px solid #e05252 !important; }
   .has-error input, .has-error select { border-color: #e05252; }
+
+  /* ── PIN Overlay ── */
+  #pin-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: linear-gradient(135deg, #1a0e04 0%, #3d2409 60%, #1a0e04 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  #pin-overlay.hidden { display: none; }
+  .pin-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,146,43,0.4);
+    border-radius: 16px; padding: 2.5rem 2rem;
+    text-align: center; width: min(340px, 90vw);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+  .pin-logo { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .pin-title { color: #C9922B; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+  .pin-sub { color: rgba(255,255,255,0.45); font-size: 0.78rem; margin-bottom: 1.6rem; }
+  .pin-dots { display: flex; gap: 0.7rem; justify-content: center; margin-bottom: 1.6rem; }
+  .pin-dot { width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 2px solid rgba(201,146,43,0.5); transition: background 0.2s; }
+  .pin-dot.filled { background: #C9922B; border-color: #C9922B; }
+  .pin-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; max-width: 240px; margin: 0 auto 1rem; }
+  .pin-key { background: rgba(255,255,255,0.07); border: 1px solid rgba(201,146,43,0.25); border-radius: 10px; color: #fff; font-size: 1.3rem; font-weight: 600; padding: 0.9rem; cursor: pointer; transition: background 0.15s, transform 0.1s; user-select: none; }
+  .pin-key:active { background: rgba(201,146,43,0.3); transform: scale(0.93); }
+  .pin-key.del { font-size: 1rem; color: rgba(255,255,255,0.5); }
+  .pin-key.empty { background: transparent; border-color: transparent; cursor: default; }
+  .pin-error { color: #e05252; font-size: 0.8rem; min-height: 1.2rem; margin-top: 0.5rem; font-weight: 600; }
+
+
 </style>
 </head>
 <body>
+
+<!-- PIN OVERLAY -->
+<div id="pin-overlay">
+  <div class="pin-box">
+    <div class="pin-logo">&#127881;</div>
+    <div class="pin-title">DIEU TUONG AM</div>
+    <div class="pin-sub">Nhap ma PIN de tiep tuc</div>
+    <div class="pin-dots">
+      <div class="pin-dot" id="pd0"></div>
+      <div class="pin-dot" id="pd1"></div>
+      <div class="pin-dot" id="pd2"></div>
+      <div class="pin-dot" id="pd3"></div>
+    </div>
+    <div class="pin-grid">
+      <button class="pin-key" onclick="pinPress('1')">1</button>
+      <button class="pin-key" onclick="pinPress('2')">2</button>
+      <button class="pin-key" onclick="pinPress('3')">3</button>
+      <button class="pin-key" onclick="pinPress('4')">4</button>
+      <button class="pin-key" onclick="pinPress('5')">5</button>
+      <button class="pin-key" onclick="pinPress('6')">6</button>
+      <button class="pin-key" onclick="pinPress('7')">7</button>
+      <button class="pin-key" onclick="pinPress('8')">8</button>
+      <button class="pin-key" onclick="pinPress('9')">9</button>
+      <button class="pin-key empty" disabled></button>
+      <button class="pin-key" onclick="pinPress('0')">0</button>
+      <button class="pin-key del" onclick="pinDel()">&#9003;</button>
+    </div>
+    <div class="pin-error" id="pin-error"></div>
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════
      SECTION 1 – HERO
@@ -810,40 +869,40 @@
      SECTION 4 – PORTFOLIO + FOOTER
 ══════════════════════════════════════════ -->
 <section id="portfolio">
-  <p class="section-label">Sự kiện trong năm</p>
-  <h2 class="section-title">Những sự kiến đã tổ chức</h2>
+  <p class="section-label"></p>
+  <h2 class="section-title"></h2>
 
   <div class="gallery-grid">
     <div class="gallery-item">
       <img src="image/1.jpg" alt="Tác phẩm 1" loading="lazy">
-      <div class="gallery-overlay"><div><h4>Thư pháp</h4><p></p></div></div>
+      <div class="gallery-overlay"><div><h4></h4><p></p></div></div>
     </div>
     <div class="gallery-item">
       <img src="image/2.jpg" alt="Tác phẩm 2" loading="lazy">
-      <div class="gallery-overlay"><div><h4>Cây tài lộc</h4><p></p></div></div>
+      <div class="gallery-overlay"><div><h4></h4><p></p></div></div>
     </div>
     <div class="gallery-item">
       <img src="image/3.jpg" alt="Tác phẩm 3" loading="lazy">
-      <div class="gallery-overlay"><div><h4>Ông đồ thư pháp</h4><p></p></div></div>
+      <div class="gallery-overlay"><div><h4></h4><p></p></div></div>
     </div>
     <div class="gallery-item">
       <img src="image/4.jpg" alt="Tác phẩm 4" loading="lazy">
-      <div class="gallery-overlay"><div><h4>Trang trí nón lá</h4><p></p></div></div>
+      <div class="gallery-overlay"><div><h4></h4><p></p></div></div>
     </div>
     <div class="gallery-item">
       <img src="image/5.jpg" alt="Tác phẩm 5" loading="lazy">
-      <div class="gallery-overlay"><div><h4>Xếp lá dừa</h4><p></p></div></div>
+      <div class="gallery-overlay"><div><h4></h4><p></p></div></div>
     </div>
     <div class="gallery-item" style="background:linear-gradient(135deg,#2A1506,#5C3015);">
       <img src="image/6.jpg" alt="Tác phẩm 6" loading="lazy">
-      <div class="gallery-overlay"><div><h4>Hoạt động dân gian</h4><p></p></div></div>
+      <div class="gallery-overlay"><div><h4></h4><p></p></div></div>
     </div>
   </div>
 
   <div class="footer-strip">
     <div class="company-brand">
       <h3>DIỆU TƯỚNG AM</h3>
-      <p></p>
+      <p>Chuyên tạc tượng Phật thủ công theo yêu cầu. Kết hợp nghệ thuật điêu khắc truyền thống với tiêu chuẩn chất lượng hiện đại. Hơn 20 năm kinh nghiệm phục vụ hàng trăm ngôi chùa, gia đình và doanh nghiệp trên khắp cả nước.</p>
       <div class="social-links">
         <a href="https://www.facebook.com/dieutuongam.nghethuatphatgiao" class="social-btn" target="_blank">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
@@ -864,7 +923,7 @@
       <h4>Liên hệ</h4>
       <ul>
         <li>0901 234 567</li>
-        <!-- <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3b52555d547b5f525e4e4f4e54555c5a5615585456"></a></li> -->
+        <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3b52555d547b5f525e4e4f4e54555c5a5615585456">[email&#160;protected]</a></li>
         <li>Showroom Hồ Chí Minh: 382 Nam Kỳ Khởi Nghĩa, P. Xuân Hòa, Hồ Chí Minh</li>
         <li>Showroom Hà Nội: 252 Bà Triệu, P. Hai Bà Trưng, Hà Nội</li>
         <li>T2 – CN: 8:30 – 20:00</li>
@@ -1295,7 +1354,7 @@ function collectBM3() {
   const tgEl         = document.querySelector('input[name="thoi-gian-tuong"]:checked');
   data.thoiGian      = tgEl ? tgEl.value : '';
   data.nganSach      = document.getElementById('ngan-sach-tuong')?.value.trim()   || '';
-  data.anhMauLink    = document.getElementById('anh-mau-link')?.value.trim()      || '';
+  data.anhMauLink    = document.getElementById('anh-mau-link')?.value.trim() || '';
   data.yeuCauDacBiet = document.getElementById('yeu-cau-dac-biet')?.value.trim()  || '';
 
   // Biết DTA qua
@@ -1310,7 +1369,7 @@ function collectBM3() {
 // ─────────────────────────────────────────────────────
 //  Gửi đến Google Sheets
 // ─────────────────────────────────────────────────────
-const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbweKI_iPEc03qf2D9M4BCrqLo1t194pURrw02Q9W3lDkAi1VgjskzldX2kU9rqp_kz7/exec';
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxUCTgNTqZksnJ6oQdVsoZVXKcN19mo28H21GvD7ehajFrQKMAFZmeMK4PA8uLuSEKM/exec';
 
 async function sendToGoogleSheets(data) {
   try {
@@ -1371,8 +1430,65 @@ function toggleMobileMenu() {
   document.querySelector('.nav-links').classList.toggle('active');
 }
 
+// ====================== PIN LOCK ======================
+const PIN_CORRECT  = '1234';        // ← ĐỔI MÃ PIN TẠI ĐÂY
+const PIN_STORAGE  = 'dta_pin_ok';
+
+let pinBuffer = '';
+
+function initPin() {
+  // Nếu thiết bị này đã xác thực PIN trước đó → bỏ qua
+  if (sessionStorage.getItem(PIN_STORAGE) === 'yes') {
+    document.getElementById('pin-overlay').classList.add('hidden');
+  }
+}
+
+function pinPress(digit) {
+  if (pinBuffer.length >= 4) return;
+  pinBuffer += digit;
+  updatePinDots();
+  if (pinBuffer.length === 4) {
+    setTimeout(checkPin, 120);
+  }
+}
+
+function pinDel() {
+  pinBuffer = pinBuffer.slice(0, -1);
+  updatePinDots();
+  document.getElementById('pin-error').textContent = '';
+}
+
+function updatePinDots() {
+  for (let i = 0; i < 4; i++) {
+    document.getElementById('pd' + i).classList.toggle('filled', i < pinBuffer.length);
+  }
+}
+
+function checkPin() {
+  if (pinBuffer === PIN_CORRECT) {
+    sessionStorage.setItem(PIN_STORAGE, 'yes');
+    const overlay = document.getElementById('pin-overlay');
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.4s';
+    setTimeout(() => overlay.classList.add('hidden'), 400);
+  } else {
+    document.getElementById('pin-error').textContent = '❌ Mã PIN không đúng. Thử lại!';
+    // rung nhẹ
+    const box = document.querySelector('.pin-box');
+    box.style.animation = 'none';
+    box.style.transform = 'translateX(-6px)';
+    setTimeout(() => box.style.transform = 'translateX(6px)', 80);
+    setTimeout(() => box.style.transform = 'translateX(0)',   160);
+    pinBuffer = '';
+    updatePinDots();
+  }
+}
+
 // ====================== INIT ======================
 document.addEventListener('DOMContentLoaded', function () {
+  // PIN init
+  initPin();
+
   // Clear error on input
   document.querySelectorAll('#panel-1 input').forEach(el => {
     el.addEventListener('input', function () {
